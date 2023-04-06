@@ -99,3 +99,10 @@ var defaultAnswer = "human";
 var spec = prompt(question, defaultAnswer);
 var numberOfCats = prompt("How many cats?");
 var tooManyCats = numberOfCats + 1;
+//Zakat Calculation
+//class Assign Work
+var zakat_percentage = 0.025;
+var user_asset = + prompt ("Write Your Assets Value");
+var result = zakat_percentage * user_asset;
+alert("Your Zakat is " + result);
+
