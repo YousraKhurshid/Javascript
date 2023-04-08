@@ -40,10 +40,12 @@ alert(144);
 var caseQty = 144;
 alert(caseQty);
 //chap4
-userResponse
-userResponseTime
-userResponseTimeLimit
-response
+
+// userResponse
+// userResponseTime
+// userResponseTimeLimit
+// response
+
 //chap5
 var popularNumber = 4;
 var popularNumber = 2 + 2;
