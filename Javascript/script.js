@@ -3,11 +3,12 @@
 // alert ( "Thanks for your input!" );
 // alert ( "Thanks for your input!" );
 // //Chap2
-// var name = "Mark";
+//let ok = "Yousra";
+//console.log(ok);
 // var name = "Mark";
 // name = "Ace";
 // var nationality;
-// nationality = "U.S.";
+// nationality = "U.S." ;
 // var floogle = "Mark";
 // var name = "Mark";
 // var floogle = "Mark";
