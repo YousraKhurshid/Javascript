@@ -2,7 +2,6 @@
 <!-- Date  17-05-23-->
 
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,26 +10,115 @@
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Javascript Assignment Bano Qabil
     </title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous"> -->
 
+    <link rel="stylesheet" href="CSS\assign2.css">
 
     
 </head>
+
+<script>
+  alert("I am writing JS in Index.html After head.")
+</script>
 <body>
-    <div class="container d-flex justity-content-center align-items-center w-50" style="height:100vh">
+  <!-- q1 assignment no. 53-57Modal -->
+<div id="myModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="modalImg">
+  <div id="caption"></div>
+</div>
+
+<!-- Images -->
+<img src="image1.jpg" alt="Image 1" onclick="openModal(this)">
+<img src="image2.jpg" alt="Image 2" onclick="openModal(this)">
+<img src="image3.jpg" alt="Image 3" onclick="openModal(this)">
+<img src="image4.jpg" alt="Image 4" onclick="openModal(this)">
+
+<!-- Paragraph and Zoom Buttons -->
+<p id="zoomedParagraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<button onclick="zoomIn()">Zoom In (+)</button>
+<button onclick="zoomOut()">Zoom Out (-)</button>
+<h2>Signup Form</h2>
+  <form id="signupForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    <br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+    <br>
+    <input type="submit" value="Submit">
+  </form>
+
+  <h2>Form Data:</h2>
+  <ul id="formDataList"></ul>
+
+<!-- assignment 49-52 q2 and q3 -->
+<!-- q2 -->
+  <h2>Item Details</h2>
+  <div class="item">
+    <h3>Item 1</h3>
+    <p>Summary of Item 1...</p>
+    <button class="read-more">Read More</button>
+    <div class="item-details">
+      <p>Full details of Item 1...</p>
+    </div>
+  </div>
+  <div class="item">
+    <h3>Item 2</h3>
+    <p>Summary of Item 2...</p>
+    <button class="read-more">Read More</button>
+    <div class="item-details">
+      <p>Full details of Item 2...</p>
+    </div>
+  </div>
+  <!-- q3 -->
+  <h2>Student Details Form</h2>
+  <form id="studentForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    <br>
+    <label for="age">Age:</label>
+    <input type="number" id="age" name="age" required>
+    <br>
+    <input type="submit" value="Add Student">
+  </form>
+
+  <h2>Student Details Table</h2>
+  <table id="studentTable">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody id="studentTableBody"></tbody>
+  </table>
+
+  <script>
+    alert("I am writing JS in body before page's HTML. ")
+  </script>
+    <!-- <div class="container d-flex justity-content-center align-items-center w-50" style="height:100vh">
     <table class="table">
         <thead>
           <tr>
             <th colspan="5"><input type="text" id="result" class="form-control"></th>
             </tr>
-        </thead> 
-        <tbody>
+        </thead>  -->
+<script>
+  alert("I am writing JS in body inside page's HTML.")
+</script>
+         <!-- <tbody>
           <tr>
             <td><Button class="btn btn-dark text-center w-100" onclick="getNum(7)">7</Button></td>
             <td><Button class="btn btn-dark text-center w-100" onclick="getNum(8)">8</Button></td>
             <td><Button class="btn btn-dark text-center w-100"onclick="getNum(9)">9</Button></td>
             <td><Button class="btn btn-dark text-center w-100" onclick="getNum('+')">+</Button></td>
             <td><Button class="btn btn-dark text-center w-100" onclick="getNum('%')">%</Button></td>
+            <td><Button class="btn btn-dark text-center w-100" onclick="getNum('cos')">cos</Button></td>
           </tr>
           <tr>
             <td><Button class="btn btn-dark text-center w-100"onclick="getNum(4)">4</Button></td>
@@ -38,6 +126,7 @@
             <td><Button class="btn btn-dark text-center w-100"onclick="getNum(6)">6</Button></td>
             <td><Button class="btn btn-dark text-center w-100"onclick="getNum('-')">-</Button></td>
             <td><Button class="btn btn-dark text-center w-100"onclick="getNum('&#40;')">&#40;</Button></td>
+            <td><Button class="btn btn-dark text-center w-100"onclick="getNum('sin')">Sin</Button></td>
           </tr>
           <tr>
             <td><Button class="btn btn-dark text-center w-100"onclick="getNum(1)">1</Button></td>
@@ -45,30 +134,37 @@
             <td><Button class="btn btn-dark text-center w-100"onclick="getNum(3)">3</Button></td>
             <td><Button class="btn btn-dark text-center w-100" onclick="getNum('/')">/</Button></td>
             <td><Button class="btn btn-dark text-center w-100" onclick="getNum('&#41;')">&#41;</Button></td>
+            <td><Button class="btn btn-dark text-center w-100" onclick="getNum('tan')">tan</Button></td>
           </tr>
           <tr>
             <td><Button class="btn btn-dark text-center w-100" onclick="clearScr()">AC</Button></td>
             <td><Button class="btn btn-dark text-center w-100"onclick="getNum(0)">0</Button></td>
             <td><Button class="btn btn-dark text-center w-100" onclick="removeNum()">C</Button></td>
             <td><Button class="btn btn-dark text-center w-100" onclick="getNum('*')">*</Button></td>
-            <td><Button class="btn btn-dark text-center w-100" onclick="getNum('3.141')">π</Button></td>
+            <td><Button class="btn btn-dark text-center w-100" onclick="getNum('*3.141')">π</Button></td>
+            <td><Button class="btn btn-dark text-center w-100" onclick="getNum('x^2')">x²</Button></td>
           </tr>
           </tr>
           <tr>
             <td><Button class="btn btn-dark text-center w-100" onclick="getAns()">=</Button></td>
             <td><Button class="btn btn-dark text-center w-100"onclick="getNum(00)">00</Button></td>
             <td><Button class="btn btn-dark text-center w-100" onclick="getNum('.')">.</Button></td>
-            <td><Button class="btn btn-dark text-center w-100"onclick="getNum('^')">^</Button></td>
-            <td><Button class="btn btn-dark text-center w-100" onclick="getNum('2.718')">ε</Button></td>
+            <td><Button class="btn btn-dark text-center w-100"onclick="getNum('**')">x^</Button></td>
+            <td><Button class="btn btn-dark text-center w-100" onclick="getNum('e')">ε</Button></td>
+            <td><Button class="btn btn-dark text-center w-100" onclick="getNum('radic')">√</Button></td>
           </tr>
         </tbody>
       </table>
-    </div>
-    <!-- <script src="Javascript\script.js"></script>
-    <script src="Javascript\Assign1-JS.js"></script> -->
+    </div> -->
+    <!-- <script src="Javascript\script.js"></script> -->
+    <!-- <script src="Javascript\Assign1-JS.js"></script> -->
     <!-- <script src="Javascript\Calculator.js"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-    <script src="app.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script> -->
+    <!-- <script src="Javascript\app-2-.js"></script> -->
+    <script>
+      alert("I am writing JS in body after page's HTML. ")
+    </script>
 
+    <script src="Javascript\Assign-book-3.js"></script>
 </body>
 <html>
