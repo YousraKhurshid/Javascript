@@ -414,183 +414,6 @@ document.write("</table>");
 document.write("Total Obtained Marks: " + totalObtainedMarks + "<br>");
 document.write("Percentage: " + percentage.toFixed(2) + "%");
 
-//Assignment # 58-67JAVASCRIPT
-//q1
-var mainContent = document.getElementById("main-content");
-console.log(mainContent.children);
-
-var renderElements = document.getElementsByClassName("render");
-for (var i = 0; i < renderElements.length; i++) {
-  console.log(renderElements[i].innerHTML);
-}
-
-var firstNameInput = document.getElementById("first-name");
-firstNameInput.value = "Yousra";
-
-var lastNameInput = document.getElementById("last-name");
-var emailInput = document.getElementById("email");
-lastNameInput.value = "Bank";
-emailInput.value = "yousrakhurshid1@gmail.com";
-
-//q2
-
-// i. What is the node type of the element with id "form-content"?
-var formContentElement = document.getElementById("form-content");
-console.log(formContentElement.nodeType);
-
-// ii. Show the node type of the element with id "lastName" and its child node.
-var lastNameElement = document.getElementById("lastName");
-console.log(lastNameElement.nodeType);
-console.log(lastNameElement.childNodes[0].nodeType);
-
-// iii. Update the child node of the element with id "lastName".
-lastNameElement.childNodes[0].nodeValue = "New Last Name";
-
-// iv. Get the first and last child of the element with id "main-content".
-var mainContentElement = document.getElementById("main-content");
-console.log(mainContentElement.firstChild);
-console.log(mainContentElement.lastChild);
-
-// v. Get the next and previous siblings of the element with id "lastName".
-console.log(lastNameElement.nextSibling);
-console.log(lastNameElement.previousSibling);
-
-// vi. Get the parent node and node type of the element with id "email".
-var emailElement = document.getElementById("email");
-console.log(emailElement.parentNode);
-console.log(emailElement.nodeType);
-
-// assignment no. 53-57
-//q1
-//index.html
-//q2
-//assihn2.css
-//q3
-// Image Modal Functions
-// Image Modal Functions
-function openModal(imgElement) {
-  var modal = document.getElementById("myModal");
-  var modalImg = document.getElementById("modalImg");
-  var captionText = document.getElementById("caption");
-  modal.style.display = "block";
-  modalImg.src = imgElement.src;
-  captionText.innerHTML = imgElement.alt;
-}
-
-function closeModal() {
-  var modal = document.getElementById("myModal");
-  modal.style.display = "none";
-}
-
-// Zoom In/Out Functions
-var zoomedParagraph = document.getElementById("zoomedParagraph");
-var fontSize = 16; // Initial font size
-
-function zoomIn() {
-  fontSize += 10;
-  zoomedParagraph.style.fontSize = fontSize + "px";
-}
-
-function zoomOut() {
-  fontSize -= 10;
-  if (fontSize < 10) {
-    fontSize = 10; // Minimum font size
-  }
-  zoomedParagraph.style.fontSize = fontSize + "px";
-}
-
-// Close modal when the close button or modal background is clicked
-var closeBtn = document.getElementsByClassName("close")[0];
-var modal = document.getElementById("myModal");
-
-closeBtn.onclick = closeModal;
-modal.onclick = function (event) {
-  if (event.target == modal) {
-    closeModal();
-  }
-};
-
-
-//assignment 49-52
-//q1
-var signupForm = document.getElementById('signupForm');
-var formDataList = document.getElementById('formDataList');
-
-signupForm.addEventListener('submit', function(event) {
-  event.preventDefault();
-
-  var name = document.getElementById('name').value;
-  var email = document.getElementById('email').value;
-  var password = document.getElementById('password').value;
-
-  var formData = {
-    name: name,
-    email: email,
-    password: password
-  };
-
-  var formDataItem = document.createElement('li');
-  formDataItem.textContent = JSON.stringify(formData);
-  formDataList.appendChild(formDataItem);
-
-  signupForm.reset();
-});
-
-//q2
-
-var readMoreButtons = document.getElementsByClassName('read-more');
-
-    Array.from(readMoreButtons).forEach(function(button) {
-      button.addEventListener('click', function() {
-        var itemDetails = this.nextElementSibling;
-        itemDetails.style.display = 'block';
-      });
-    });
-    
-//q3
-
-var studentForm = document.getElementById('studentForm');
-var studentTableBody = document.getElementById('studentTableBody');
-
-studentForm.addEventListener('submit', function(event) {
-  event.preventDefault();
-
-  var name = document.getElementById('name').value;
-  var age = document.getElementById('age').value;
-
-  var newRow = document.createElement('tr');
-  var nameCell = document.createElement('td');
-  var ageCell = document.createElement('td');
-  var actionsCell = document.createElement('td');
-  var deleteButton = document.createElement('button');
-  var editButton = document.createElement('button');
-
-  nameCell.textContent = name;
-  ageCell.textContent = age;
-  deleteButton.textContent = 'Delete';
-  editButton.textContent = 'Edit';
-
-  deleteButton.addEventListener('click', function() {
-    studentTableBody.removeChild(newRow);
-  });
-
-  editButton.addEventListener('click', function() {
-    document.getElementById('name').value = name;
-    document.getElementById('age').value = age;
-  });
-
-  actionsCell.appendChild(deleteButton);
-  actionsCell.appendChild(editButton);
-
-  newRow.appendChild(nameCell);
-  newRow.appendChild(ageCell);
-  newRow.appendChild(actionsCell);
-
-  studentTableBody.appendChild(newRow);
-
-  studentForm.reset();
-});
-
 
 //Assign no. 35-38
 //Q1
@@ -779,6 +602,113 @@ function calcArea(radius) {
 calcCircumference(5);
 calcArea(5); 
 
+//assignment 9-10
+//q1 Write a program to take “city” name as input from user. If user enters “Karachi”, welcome the user like this: “Welcome to city of lights”
+ 
+var cityName = prompt ("Write your city Name.")
+if (cityName == "Karachi") {
+  alert("Welcome to city of lights");
+}
+else {
+alert("Welcome to " + cityName);
+}
+
+// //q2Write a program to take “gender” as input from user. If the
+// user is male, give the message: Good Morning Sir. If the 
+// user is female, give the message: Good Morning Ma’am.
+
+var gender = prompt ("Write your gender.");
+if (gender == "male") {
+  alert("Good morning Sir.");
+} else {
+  alert("Good morning Ma'am");
+}
+
+//q3 Write a program to take input color of road traffic signal 
+// from the user & show the message according to this table:
+
+var trafficSignal = prompt ("Write color of road traffic signal.")
+if (trafficSignal == "Red") {
+  alert("Must Stop");
+} else if (trafficSignal == "Yellow") {
+alert("Ready to move");
+} else {
+  alert("Move now");
+}
+
+//q4 Write a program to take input remaining fuel in car (in 
+// litres) from user. If the current fuel is less than 0.25litres, 
+// show the message “Please refill the fuel in your car”
+
+var remainingFuel = prompt ("Write the remaining fuel in car (in liters).");
+if (+remainingFuel < 0.25){
+  alert ("Please refill the fuel in your car");
+}
+
+//q5
+
+// a. 
+// ```javascript
+var a = 4;
+if (++a === 5){
+  alert("given condition for variable a is true");
+}
+// ```
+// Output: "given condition for variable a is true"
+
+// b. 
+// ```javascript
+var b = 82;
+if (b++ === 83){
+  alert("given condition for variable b is true");
+}
+// ```
+// Output: No alert message will be displayed.
+
+// c. 
+// ```javascript
+var c = 12;
+if (c++ === 13){
+  alert("condition 1 is true");
+}
+if (c === 13){
+  alert("condition 2 is true");
+}
+if (++c < 14){
+  alert("condition 3 is true");
+}
+if(c === 14){
+  alert("condition 4 is true");
+}
+// ```
+// Output: "condition 2 is true" and "condition 4 is true"
+
+// d. 
+// ```javascript
+var materialCost = 20000;
+var laborCost = 2000;
+var totalCost = materialCost + laborCost;
+if (totalCost === laborCost + materialCost){
+  alert("The cost equals");
+}
+// ```
+// Output: "The cost equals"
+
+// e. 
+// ```javascript
+if (true){
+  alert("True");
+}
+if (false){
+  alert("False");
+}
+// ```
+// Output: "True"
+if ("car" < "cat"){
+  alert("car is smaller than cat");
+}
+//output: car is smaller than cat
+//q6
 // assignment 38-44
 //q1
 function power(a, b) {
@@ -938,6 +868,183 @@ console.log(calculateOvertimePay(45));
 console.log(calculateCurrencyNotes(320)); // Output: { notesOf100: 3, notesOf50: 0, notesOf10: 2 }
 
 
+//assignment 49-52
+//q1
+var signupForm = document.getElementById('signupForm');
+var formDataList = document.getElementById('formDataList');
+
+signupForm.addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  var name = document.getElementById('name').value;
+  var email = document.getElementById('email').value;
+  var password = document.getElementById('password').value;
+
+  var formData = {
+    name: name,
+    email: email,
+    password: password
+  };
+
+  var formDataItem = document.createElement('li');
+  formDataItem.textContent = JSON.stringify(formData);
+  formDataList.appendChild(formDataItem);
+
+  signupForm.reset();
+});
+
+//q2
+
+var readMoreButtons = document.getElementsByClassName('read-more');
+
+    Array.from(readMoreButtons).forEach(function(button) {
+      button.addEventListener('click', function() {
+        var itemDetails = this.nextElementSibling;
+        itemDetails.style.display = 'block';
+      });
+    });
+    
+//q3
+
+var studentForm = document.getElementById('studentForm');
+var studentTableBody = document.getElementById('studentTableBody');
+
+studentForm.addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  var name = document.getElementById('name').value;
+  var age = document.getElementById('age').value;
+
+  var newRow = document.createElement('tr');
+  var nameCell = document.createElement('td');
+  var ageCell = document.createElement('td');
+  var actionsCell = document.createElement('td');
+  var deleteButton = document.createElement('button');
+  var editButton = document.createElement('button');
+
+  nameCell.textContent = name;
+  ageCell.textContent = age;
+  deleteButton.textContent = 'Delete';
+  editButton.textContent = 'Edit';
+
+  deleteButton.addEventListener('click', function() {
+    studentTableBody.removeChild(newRow);
+  });
+
+  editButton.addEventListener('click', function() {
+    document.getElementById('name').value = name;
+    document.getElementById('age').value = age;
+  });
+
+  actionsCell.appendChild(deleteButton);
+  actionsCell.appendChild(editButton);
+
+  newRow.appendChild(nameCell);
+  newRow.appendChild(ageCell);
+  newRow.appendChild(actionsCell);
+
+  studentTableBody.appendChild(newRow);
+
+  studentForm.reset();
+});
+
+
+
+// assignment no. 53-57
+//q1
+//index.html
+//q2
+//assihn2.css
+//q3
+// Image Modal Functions
+// Image Modal Functions
+function openModal(imgElement) {
+  var modal = document.getElementById("myModal");
+  var modalImg = document.getElementById("modalImg");
+  var captionText = document.getElementById("caption");
+  modal.style.display = "block";
+  modalImg.src = imgElement.src;
+  captionText.innerHTML = imgElement.alt;
+}
+
+function closeModal() {
+  var modal = document.getElementById("myModal");
+  modal.style.display = "none";
+}
+
+// Zoom In/Out Functions
+var zoomedParagraph = document.getElementById("zoomedParagraph");
+var fontSize = 16; // Initial font size
+
+function zoomIn() {
+  fontSize += 10;
+  zoomedParagraph.style.fontSize = fontSize + "px";
+}
+
+function zoomOut() {
+  fontSize -= 10;
+  if (fontSize < 10) {
+    fontSize = 10; // Minimum font size
+  }
+  zoomedParagraph.style.fontSize = fontSize + "px";
+}
+
+// Close modal when the close button or modal background is clicked
+var closeBtn = document.getElementsByClassName("close")[0];
+var modal = document.getElementById("myModal");
+
+closeBtn.onclick = closeModal;
+modal.onclick = function (event) {
+  if (event.target == modal) {
+    closeModal();
+  }
+};
+
+//Assignment # 58-67JAVASCRIPT
+//q1
+var mainContent = document.getElementById("main-content");
+console.log(mainContent.children);
+
+var renderElements = document.getElementsByClassName("render");
+for (var i = 0; i < renderElements.length; i++) {
+  console.log(renderElements[i].innerHTML);
+}
+
+var firstNameInput = document.getElementById("first-name");
+firstNameInput.value = "Yousra";
+
+var lastNameInput = document.getElementById("last-name");
+var emailInput = document.getElementById("email");
+lastNameInput.value = "Bank";
+emailInput.value = "yousrakhurshid1@gmail.com";
+
+//q2
+
+// i. What is the node type of the element with id "form-content"?
+var formContentElement = document.getElementById("form-content");
+console.log(formContentElement.nodeType);
+
+// ii. Show the node type of the element with id "lastName" and its child node.
+var lastNameElement = document.getElementById("lastName");
+console.log(lastNameElement.nodeType);
+console.log(lastNameElement.childNodes[0].nodeType);
+
+// iii. Update the child node of the element with id "lastName".
+lastNameElement.childNodes[0].nodeValue = "New Last Name";
+
+// iv. Get the first and last child of the element with id "main-content".
+var mainContentElement = document.getElementById("main-content");
+console.log(mainContentElement.firstChild);
+console.log(mainContentElement.lastChild);
+
+// v. Get the next and previous siblings of the element with id "lastName".
+console.log(lastNameElement.nextSibling);
+console.log(lastNameElement.previousSibling);
+
+// vi. Get the parent node and node type of the element with id "email".
+var emailElement = document.getElementById("email");
+console.log(emailElement.parentNode);
+console.log(emailElement.nodeType);
 
 
 
